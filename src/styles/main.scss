@@ -1,6 +1,60 @@
-$bgcolor:red;
+@use "variaveis";
+@use "hero";
+@use "shows";
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 
 body{
-    background-color: $bgcolor;
+    background-color:variaveis.$corDefundo;
+   
+    
 }
+
+
+
+
+@mixin text($fontSize:16px){
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+}
+
+@mixin title($fontSize:16px){
+    @include text($fontSize);
+}
+
+.text--big{
+    @include text(18px);
+    color: variaveis.$corTextprincipal;
+}
+
+.text{
+    @include text;
+    color: variaveis.$corTextprincipal;
+}
+
+.text--small{
+    @include text(12px);
+    color: variaveis.$corTextprincipal;
+}
+
+.title--big{
+    @include title(44px);
+    color: variaveis.$corTextprincipal;
+}
+.title{
+    @include title;
+}
+.title--small{
+    @include title(28px);
+    color:variaveis.$corTextprincipal;
+}
+
+
+
